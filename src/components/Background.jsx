@@ -164,7 +164,6 @@ const CameraAnimation = ({ section }) => {
     {x: 10,y:1,z:0},
     {x: 0,y:30,z:0},
     {x: 0,y:0,z:30},
-    {x: 0,y:0,z:60},
     {x: 0,y:0,z:70},
    ];
 
