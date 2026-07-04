@@ -118,11 +118,20 @@ const Section4 = ({...props}) => {
             size={0.7}
             textAlign='center'
             font="/Inter_Bold.json"
-            >
+          >
             {`Contactes`}
-            <meshStandardMaterial
-            color="#FF8F20"
-             />
+            <meshPhysicalMaterial
+              color="#FF8F20"
+              transparent
+              opacity={0.6}
+              iridescence={1}
+              iridescenceIOR={1.3}
+              iridescenceThicknessRange={[100, 400]}
+              roughness={0.1}
+              metalness={0.1}
+              clearcoat={1}
+              clearcoatRoughness={0.1}
+            />
           </Text3D>
           <Float
           floatIntensity={0.5}
@@ -143,9 +152,18 @@ const Section4 = ({...props}) => {
               font="/Inter_Bold.json"
               >
               {`\nNous!`}
-              <meshStandardMaterial
-            color="#FF8F20"
-             />
+              <meshPhysicalMaterial
+                color="#FF8F20"
+                transparent
+                opacity={0.6}
+                iridescence={1}
+                iridescenceIOR={1.3}
+                iridescenceThicknessRange={[100, 400]}
+                roughness={0.1}
+                metalness={0.1}
+                clearcoat={1}
+                clearcoatRoughness={0.1}
+              />
             </Text3D>
           </Float>
       </Float>
