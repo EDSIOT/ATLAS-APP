@@ -290,7 +290,7 @@ const BackgroundScene = () => {
             <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches '} hero={hero0}/>
             <Section position={[5, 2, 0]} rotation-y={Math.PI / 2} text={'services'} hero={hero1} visible={section !== 0}/>
             <Section3 position={[0, 15,0]} visible={section !== 0} />         
-            <Section4 position={[0, 0, 50]}/>
+            <Section4 position={[0, 0, 50]} visible={section !== 2}/>
             
             
             
