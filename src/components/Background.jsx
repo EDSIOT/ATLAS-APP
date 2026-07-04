@@ -278,7 +278,26 @@ const BackgroundScene = () => {
       
     gl={{preserveDrawingBuffer: true}}
      shadows >
-      <Environment preset="studio" /> 
+      {/* Lumière d'ambiance douce, évite les zones totalement noires */}
+      <ambientLight intensity={0.4} />
+
+      {/* Lumière principale (key light) - simule le soleil/spot studio */}
+      <directionalLight
+        position={[5, 10, 5]}
+        intensity={1.5}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+      />
+
+      {/* Lumière de remplissage (fill light) - adoucit les ombres du côté opposé */}
+      <directionalLight
+        position={[-5, 5, -5]}
+        intensity={0.5}
+      />
+
+      {/* Lumière du dessus, pour l'effet studio/reflets sur matériaux physiques */}
+      <pointLight position={[0, 8, 0]} intensity={0.8} />
       <perspectiveCamera />
       <CameraAnimation section={section} />
       
