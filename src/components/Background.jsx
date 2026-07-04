@@ -278,6 +278,7 @@ const BackgroundScene = () => {
       
     gl={{preserveDrawingBuffer: true}}
      shadows >
+      <Environment preset="studio" /> 
       <perspectiveCamera />
       <CameraAnimation section={section} />
       
