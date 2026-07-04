@@ -297,7 +297,11 @@ const BackgroundScene = () => {
       />
 
       {/* Lumière du dessus, pour l'effet studio/reflets sur matériaux physiques */}
-      <pointLight position={[0, 8, 0]} intensity={1} />
+      <pointLight position={[0, 8, 0]} intensity={2} />
+      <pointLight intensity={2} position={ [5,-50,-20] } ref={pointLightRef} />
+      <pointLight position={[10,30,10]} intensity={2}    />
+      
+      
       <perspectiveCamera />
       <CameraAnimation section={section} />
       
