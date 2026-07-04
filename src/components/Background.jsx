@@ -279,7 +279,7 @@ const BackgroundScene = () => {
     gl={{preserveDrawingBuffer: true}}
      shadows >
       {/* Lumière d'ambiance douce, évite les zones totalement noires */}
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.7} />
 
       {/* Lumière principale (key light) - simule le soleil/spot studio */}
       <directionalLight
