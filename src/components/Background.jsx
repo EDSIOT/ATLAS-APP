@@ -274,7 +274,6 @@ const BackgroundScene = () => {
   
   return (
     <div className='canvas-container'> 
-      <Environment preset="studio" />
       <Canvas onWheel={handleWheel}
       
     gl={{preserveDrawingBuffer: true}}
@@ -284,7 +283,7 @@ const BackgroundScene = () => {
       <CameraAnimation section={section} />
       
        <Suspense fallback={<CanvasLoader />}>
-               
+            <Environment preset="studio" />   
             <Gym    position={[2.5, -2, 0]} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
             <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches ?'} hero={hero0}/>
