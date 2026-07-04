@@ -277,8 +277,7 @@ const BackgroundScene = () => {
       <Canvas onWheel={handleWheel}
       
     gl={{preserveDrawingBuffer: true}}
-     shadows > 
-      <Environment preset="studio" /> 
+     shadows >
       <perspectiveCamera />
       <CameraAnimation section={section} />
       
