@@ -256,16 +256,16 @@ const BackgroundScene = () => {
 
   /*-----sections texts-----*/
 
-  const hero0=`Des programmes adaptés à tes objectifs et capacités
-  \n associés à une routine d’échauffement et d’étirement. 
-  \nMon programme sera fait pour toi.`
+  const hero0=`Un programme 100% sur-mesure, pensé pour tes objectifs et ton niveau.
+  \n Ici, échauffements, étirements, progression : rien n'est laissé au hasard.
+  \nTon programme. Tes résultats.`
 
 
   const hero1=`
-  \n\n  ·Des programmes d'entraînement personnalisés, allant du renforcement et plans de remise en forme complets à la préparation d'athlète pour des échéances.
-  \n  ·Un suivi mensuel comprenant des programmes personnalisés et adaptés chaque semaine, des retours sur la techniques quotidiens ainsi que des conseils nutritionnels pour l'optimisation de la performance. 
-  \n  ·Des sessions de coaching individuelles pour des conseils et une correction de mouvements en présentiel.
-  \n  ·Des cours en téléconférence sur la morpho-anatomie et la physiologie du corps par rapport à l'entraînement.
+  \n\n  ·**Programmes personnalisés** : du renforcement et remise en forme complète à la préparation pour tes échéances sportives.
+  \n  ·**Suivi mensuel évolutif** : programmes ajustés chaque semaine, retours techniques quotidiens et conseils nutrition pour booster tes performances.
+  \n  ·**Coaching individuel en présentiel** : correction de mouvements et conseils personnalisés, en direct avec ton coach.
+  \n  ·**Cours en visio** : comprends ta morpho-anatomie et ta physiologie pour un entraînement 100% adapté à ton corps.
   `
 
   
@@ -287,7 +287,7 @@ const BackgroundScene = () => {
                
             <Gym    position={[2.5, -2, 0]} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
-            <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches '} hero={hero0}/>
+            <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches ?'} hero={hero0}/>
             <Section position={[5, 2, 0]} rotation-y={Math.PI / 2} text={'services'} hero={hero1} visible={section !== 0}/>
             <Section3 position={[0, 15,0]} visible={section !== 0} />         
             <Section4 position={[0, 0, 50]} visible={section !== 2}/>
