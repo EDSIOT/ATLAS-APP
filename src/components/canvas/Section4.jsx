@@ -121,15 +121,16 @@ const Section4 = ({...props}) => {
           >
             {`Contactes`}
             <meshPhysicalMaterial
+              color="#000000"
               transparent
-              opacity={0.2}
+              opacity={0.6}
               iridescence={1}
-              iridescenceIOR={3}
+              iridescenceIOR={1.5}
               iridescenceThicknessRange={[100, 500]}
-              roughness={0.5}
+              roughness={0.1}
               metalness={0.5}
               clearcoat={1}
-              clearcoatRoughness={0.5}
+              clearcoatRoughness={0.4}
             />
           </Text3D>
           <Float
@@ -152,16 +153,16 @@ const Section4 = ({...props}) => {
               >
               {`\nNous!`}
               <meshPhysicalMaterial
-                color="#FF8F20"
+                color="#000000"
                 transparent
                 opacity={0.6}
                 iridescence={1}
-                iridescenceIOR={1.3}
-                iridescenceThicknessRange={[100, 400]}
+                iridescenceIOR={1.5}
+                iridescenceThicknessRange={[100, 500]}
                 roughness={0.1}
-                metalness={0.1}
+                metalness={0.5}
                 clearcoat={1}
-                clearcoatRoughness={0.1}
+                clearcoatRoughness={0.4}
               />
             </Text3D>
           </Float>
