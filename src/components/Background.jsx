@@ -226,7 +226,7 @@ const BackgroundScene = () => {
     
     
     const { deltaY } = e;
-    const end = 4;
+    const end = 3;
     if (deltaY >0 && section < end) {
       setSection((section) => section + 1);
       setIsHandlingWheel(true);              // wait to change section on each different srcolls
