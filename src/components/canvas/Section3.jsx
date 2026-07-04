@@ -6,13 +6,6 @@ import {  Plane,  SpotLight, useDepthBuffer , useVideoTexture, OrbitControls, Pr
 
 
 
-const films = {
-  'Sintel': 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
-  'Big Buck Bunny': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-  'Elephant Dream': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
-  'For Bigger Blazes': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-  'For Bigger Joy Rides': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
-}
 
 const Screen = ({src}) => {
 
@@ -77,10 +70,6 @@ const text3 = useRef();
 const text4 = useRef();
 
 
-  const { url } =  {
-      value: films['Sintel'],
-      options: films
-    }
  
   
   return(
