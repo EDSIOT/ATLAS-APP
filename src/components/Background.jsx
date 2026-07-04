@@ -285,7 +285,7 @@ const BackgroundScene = () => {
       
        <Suspense fallback={<CanvasLoader />}>
                
-            <Gym    position={[2.5, 0, 0]} />
+            <Gym    position={[2.5, -2, 0]} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
             <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches '} hero={hero0}/>
             <Section position={[5, 2, 0]} rotation-y={Math.PI / 2} text={'services'} hero={hero1} visible={section !== 0}/>
