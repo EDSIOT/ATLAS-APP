@@ -6,7 +6,7 @@ import {Section1 , Section2, Section3,Section4,Section5} from './canvas';
 /**import { ComputerCanvas } from './canvas' ; */
 
 import { Canvas, useFrame, useThree, extend } from '@react-three/fiber';
-import {Plane, Preload, useGLTF, Text, Center, Decal, Text3D, Billboard } from '@react-three/drei';
+import {Environment,Plane, Preload, useGLTF, Text, Center, Decal, Text3D, Billboard } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { MeshBasicMaterial, PlaneGeometry } from 'three';
 
@@ -274,7 +274,7 @@ const BackgroundScene = () => {
   
   return (
     <div className='canvas-container'> 
-      
+      <Environment preset="studio" />
       <Canvas onWheel={handleWheel}
       
     gl={{preserveDrawingBuffer: true}}
