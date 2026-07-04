@@ -19,7 +19,8 @@ const Gym = ({ ...props }) => {
       <primitive  object={Gym.scene} {...props} />
       <pointLight intensity={0.1} 
       position={ [5,-50,-20] }   />
-        <pointLight position={[10,30,10]} intensity={0.5} castShadow={true}    />
+      <pointLight position={[10,30,10]} intensity={0.5} castShadow={true}    />
+      <Environment preset="studio" />  
     </mesh>
   )
 }
