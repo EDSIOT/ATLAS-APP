@@ -91,7 +91,7 @@ floatIntensity={6} // Up/down float intensity
 //floatingRange={[1, 1.1]} // Range of y-axis values the object will float 
 >
   <Svg 
-    /*onClick={handleClick('https://www.instagram.com/halvor.j') }*/
+    onClick={() => handleClick('https://www.instagram.com/halvor.j')}
     fillMaterial={{wireframe: false}}
     position={[5.5,2,-6]}
     
@@ -103,7 +103,7 @@ floatIntensity={6} // Up/down float intensity
 </Float>
 <Float >
 <Svg 
-    /*onClick={handleClick('https://www.instagram.com/halvor.j')}*/
+    onClick={() => handleClick('https://www.instagram.com/halvor.j')}
     fillMaterial={{wireframe: false}}
     position={[5,2,8]}
     
@@ -127,9 +127,9 @@ const Section4 = ({...props}) => {
 
         transmission: {value: 1, min: 0, max: 1, step: 0.1},
 
-        ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
+        ior: { value: 3, min: 0, max: 3, step: 0.1 },
 
-        chromaticAberration: { value: 0.5, min: 0, max: 1},
+        chromaticAberration: { value: 1, min: 0, max: 1},
 
         backside: { value: true},
 
@@ -139,8 +139,7 @@ const Section4 = ({...props}) => {
       < >
       <Links {...props} />
       <Atlas  {...props} />
-      <Center position={[0,0,56]} >
-      <Float >
+      <Float position={[-2,0,56]} >
         
           <Text3D
             curveSegments={32}
@@ -178,7 +177,6 @@ const Section4 = ({...props}) => {
           </Text3D>
           </Float>
       </Float>
-      </Center>
       <group position={[0,-2,57]} >
  
       <Text  position-y={0.05} fontSize={0.08} color={"white"}
