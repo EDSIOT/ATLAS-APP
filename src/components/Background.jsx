@@ -2,6 +2,7 @@ import React, { Suspense, useRef, useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 import {styles} from './styles';
+import './styles.css';
 import {Section1 , Section2, Section3,Section4,Section5} from './canvas';
 /**import { ComputerCanvas } from './canvas' ; */
 
@@ -9,7 +10,6 @@ import { Canvas, useFrame, useThree, extend } from '@react-three/fiber';
 import {Environment, Plane, Preload, useGLTF, Text, Center, Decal, Text3D, Billboard } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { MeshBasicMaterial, PlaneGeometry } from 'three';
-import '../index.css';
 /** loading of the objects */
 const Gym = ({ ...props }) => {
   
