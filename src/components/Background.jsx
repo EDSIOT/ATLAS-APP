@@ -283,17 +283,16 @@ const BackgroundScene = () => {
 
   {section === 1 && (
     <div className="section-overlay section-overlay-2">
-      <h1>SERVICES</h1>
+      <h1>NOS SERVICES</h1>
       <h2>{hero1}</h2>
     </div>
   )}
       
-    <Canvas onWheel={handleWheel}
-      
+    <Canvas onWheel={handleWheel}  
     gl={{preserveDrawingBuffer: true}}
      shadows >
       {/* Lumière d'ambiance douce, évite les zones totalement noires */}
-      <ambientLight intensity={1.5}/>
+      <ambientLight intensity={2}/>
 
       {/* Lumière principale (key light) - simule le soleil/spot studio */}
       <directionalLight
@@ -319,7 +318,8 @@ const BackgroundScene = () => {
       <perspectiveCamera />
       <CameraAnimation section={section} />
       
-       <Suspense fallback={<CanvasLoader />}>  
+       <Suspense fallback={<CanvasLoader />}> 
+            <Environment preset="night" /> 
             <Gym    position={[2.5, -2, 0]} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
             <Section3 position={[0, 15,0]} visible={section !== 0} />         

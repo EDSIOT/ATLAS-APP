@@ -1,9 +1,11 @@
 import React, { Suspense, useRef, useState, useEffect, useMemo } from 'react';
+import * as THREE from 'three';
+import { useControls } from 'leva';
 
+import { MeshTransmissionMaterial, Plane,Sparkles,OrbitControls, Preload, ScrollControls,Float, useGLTF, useScroll,Text, useTexture, Center, Decal, Text3D, Billboard,Svg } from '@react-three/drei';
 
-import { Plane,Sparkles,OrbitControls, Preload, ScrollControls,Float, useGLTF, useScroll,Text, useTexture, Center, Decal, Text3D, Billboard,Svg } from '@react-three/drei';
-
-
+import { EffectComposer, ChromaticAberration } from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
 
 const Atlas = ({ ...props }) => {
 
@@ -13,10 +15,27 @@ const Atlas = ({ ...props }) => {
   return (
     <mesh {...props} >
   
-        <primitive  object={Atlas.scene} scale={0.1} position={[0,-7,5]} rotation-x={-0.5}   />
-        <pointLight intensity={2} 
-      position={ [5,-50,-20] } ref={pointLightRef} />
-        <pointLight position={[10,30,10]} intensity={2}    />
+      <primitive  object={Atlas.scene} scale={0.1} position={[0,-7,5]} rotation-x={-0.5}   />
+              {/* Lumière d'ambiance douce, évite les zones totalement noires */}
+      <ambientLight intensity={2}/>
+
+      {/* Lumière principale (key light) - simule le soleil/spot studio */}
+      <directionalLight
+        position={[0, 5, 20]}
+        intensity={1.5}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+      />
+
+      {/* Lumière de remplissage (fill light) - adoucit les ombres du côté opposé */}
+      <directionalLight
+        position={[-5, 5, -5]}
+        intensity={1.5}
+      />
+
+      {/* Lumière du dessus, pour l'effet studio/reflets sur matériaux physiques */}
+      <pointLight position={[0, 8, 0]} intensity={2} />
         <Sparkles
         position-y={0}
         color="white"
@@ -100,13 +119,29 @@ floatIntensity={6} // Up/down float intensity
   }
 
 const Section4 = ({...props}) => {
+      const materialProps = useControls({
+
+        thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
+
+        roughness: { value: 0, min: 0, max: 1, step: 0.1 },
+
+        transmission: {value: 1, min: 0, max: 1, step: 0.1},
+
+        ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
+
+        chromaticAberration: { value: 0.5, min: 0, max: 1},
+
+        backside: { value: true},
+
+    })
+
   return (
       < >
       <Links {...props} />
       <Atlas  {...props} />
-
-      <Center {...props} position={[0,0,55]}>
+      <Center position={[0,0,56]} >
       <Float >
+        
           <Text3D
             curveSegments={32}
             bevelEnabled
@@ -120,54 +155,29 @@ const Section4 = ({...props}) => {
             font="/Inter_Bold.json"
           >
             {`Contactes`}
-            <meshPhysicalMaterial
-              color="#000000"
-              transparent
-              opacity={0.6}
-              iridescence={1}
-              iridescenceIOR={1.5}
-              iridescenceThicknessRange={[100, 500]}
-              roughness={0.1}
-              metalness={0.5}
-              clearcoat={1}
-              clearcoatRoughness={0.4}
-            />
+            <MeshTransmissionMaterial {...materialProps}/>
           </Text3D>
           <Float
           floatIntensity={0.5}
           speed={0.5}
           >
             <Text3D
-              position-x={1}
-              position-y={-0.2}
-              curveSegments={32}
-              bevelEnabled
-              bevelSize={0.04}
-              bevelThickness={0.1}
-              height={0.5}
-              lineHeight={0.5}
-              letterSpacing={-0.06}
-              size={0.7}
-              textAlign='center'
-              font="/Inter_Bold.json"
-              >
-              {`\nNous!`}
-              <meshPhysicalMaterial
-                color="#000000"
-                transparent
-                opacity={0.6}
-                iridescence={1}
-                iridescenceIOR={1.5}
-                iridescenceThicknessRange={[100, 500]}
-                roughness={0.1}
-                metalness={0.5}
-                clearcoat={1}
-                clearcoatRoughness={0.4}
-              />
-            </Text3D>
+            curveSegments={32}
+            bevelEnabled
+            bevelSize={0.04}
+            bevelThickness={0.1}
+            height={0.5}
+            lineHeight={0.5}
+            letterSpacing={-0.06}
+            size={0.7}
+            textAlign='center'
+            font="/Inter_Bold.json"
+          >
+            {`\n Nous!`}
+            <MeshTransmissionMaterial {...materialProps}/>
+          </Text3D>
           </Float>
       </Float>
-
       </Center>
       <group position={[0,-2,57]} >
  
