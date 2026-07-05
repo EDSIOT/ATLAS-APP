@@ -2,7 +2,6 @@ import React, { Suspense, useRef, useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 
 import {styles} from './styles';
-import './styles.css';
 import {Section1 , Section2, Section3,Section4,Section5} from './canvas';
 /**import { ComputerCanvas } from './canvas' ; */
 
@@ -277,15 +276,15 @@ const BackgroundScene = () => {
       {/* Sections HTML en overlay, en dehors du Canvas */}
   {section === 0 && (
     <div className="section-overlay section-overlay-1">
-      <h1>Tu recherches ?</h1>
-      <h2 src={hero0} alt="" />
+      <h1>TU RECHERCHES ?</h1>
+      <h2>{hero0}</h2>
     </div>
   )}
 
   {section === 1 && (
     <div className="section-overlay section-overlay-2">
-      <h1>Services</h1>
-      <h2 src={hero1} alt="" />
+      <h1>SERVICES</h1>
+      <h2>{hero1}</h2>
     </div>
   )}
       
