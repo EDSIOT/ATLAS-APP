@@ -12,10 +12,17 @@ import { MeshBasicMaterial, PlaneGeometry } from 'three';
 /** loading of the objects */
 const Gym = ({ ...props }) => {
   
-  const Gym = useGLTF('./3Dmodels/gym_complex/gym_complex.glb')
+  const Gym = useGLTF('./3Dmodels/dumbbell/scene.gltf')
   return (
     <mesh receiveShadow={true}>
-      <primitive  object={Gym.scene} {...props} />
+      <primitive  object={Gym.scene} 
+      scale={45}
+      position={[0, -2, 0]} 
+      rotation={[
+          (-20 * Math.PI) / 180, 
+          (20 * Math.PI) / 180, 
+          (0 * Math.PI) / 180]} 
+      {...props} />
       <pointLight intensity={0.1} 
       position={ [5,-50,-20] }   />
       <pointLight position={[10,30,10]} intensity={0.5} castShadow={true}    /> 
@@ -287,6 +294,12 @@ const BackgroundScene = () => {
       <h2>{hero1}</h2>
     </div>
   )}
+
+  {section === 2 && (
+    <div className="section-overlay section-overlay-3">
+      <h1>NOS POGRAMMES</h1>
+    </div>
+  )}
       
     <Canvas onWheel={handleWheel}  
     gl={{preserveDrawingBuffer: true}}
@@ -320,10 +333,10 @@ const BackgroundScene = () => {
       
        <Suspense fallback={<CanvasLoader />}> 
             <Environment preset="night" /> 
-            <Gym    position={[2.5, -2, 0]} />
-            <fog attach="fog" args={['#000000', 30, 50]}/>
-            <Section3 position={[0, 15,0]} visible={section !== 0} />         
-            <Section4 position={[0, 0, 50]} visible={section !== 2}/>
+            <Gym/>
+            <fog attach="fog" args={['#000000', 30, 50]}/>  
+            <Section3 position={[0, 15,0]} visible={section == 2} />         
+            <Section4 position={[0, 0, 50]} visible={section == 3}/>
             
         </Suspense>
         

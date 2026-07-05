@@ -1,8 +1,8 @@
-import React, { Suspense, useRef, useState, useEffect, useMemo } from 'react';
+import { useRef } from 'react';
 import * as THREE from 'three';
 import { useControls } from 'leva';
 
-import { MeshTransmissionMaterial, Plane,Sparkles,OrbitControls, Preload, ScrollControls,Float, useGLTF, useScroll,Text, useTexture, Center, Decal, Text3D, Billboard,Svg } from '@react-three/drei';
+import { MeshTransmissionMaterial, Plane,Sparkles, Float, useGLTF, Text, Center, Text3D, Svg } from '@react-three/drei';
 
 import { EffectComposer, ChromaticAberration } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
