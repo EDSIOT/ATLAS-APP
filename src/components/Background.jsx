@@ -9,7 +9,7 @@ import { Canvas, useFrame, useThree, extend } from '@react-three/fiber';
 import {Environment, Plane, Preload, useGLTF, Text, Center, Decal, Text3D, Billboard } from '@react-three/drei';
 import CanvasLoader from './Loader';
 import { MeshBasicMaterial, PlaneGeometry } from 'three';
-
+import '../index.css';
 /** loading of the objects */
 const Gym = ({ ...props }) => {
   
@@ -275,21 +275,21 @@ const BackgroundScene = () => {
   return (
     <div className='canvas-container'> 
       {/* Sections HTML en overlay, en dehors du Canvas */}
-  {section === 1 && (
+  {section === 0 && (
     <div className="section-overlay section-overlay-1">
       <h1>Tu recherches ?</h1>
       <img src={hero0} alt="" />
     </div>
   )}
 
-  {section === 2 && (
+  {section === 1 && (
     <div className="section-overlay section-overlay-2">
       <h1>Services</h1>
       <img src={hero1} alt="" />
     </div>
   )}
       
-      <Canvas onWheel={handleWheel}
+    <Canvas onWheel={handleWheel}
       
     gl={{preserveDrawingBuffer: true}}
      shadows >
