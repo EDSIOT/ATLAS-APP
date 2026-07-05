@@ -278,14 +278,14 @@ const BackgroundScene = () => {
   {section === 0 && (
     <div className="section-overlay section-overlay-1">
       <h1>Tu recherches ?</h1>
-      <img src={hero0} alt="" />
+      <h2 src={hero0} alt="" />
     </div>
   )}
 
   {section === 1 && (
     <div className="section-overlay section-overlay-2">
       <h1>Services</h1>
-      <img src={hero1} alt="" />
+      <h2 src={hero1} alt="" />
     </div>
   )}
       
