@@ -274,6 +274,21 @@ const BackgroundScene = () => {
   
   return (
     <div className='canvas-container'> 
+      {/* Sections HTML en overlay, en dehors du Canvas */}
+  {section === 1 && (
+    <div className="section-overlay section-overlay-1">
+      <h1>Tu recherches ?</h1>
+      <img src={hero0} alt="" />
+    </div>
+  )}
+
+  {section === 2 && (
+    <div className="section-overlay section-overlay-2">
+      <h1>Services</h1>
+      <img src={hero1} alt="" />
+    </div>
+  )}
+      
       <Canvas onWheel={handleWheel}
       
     gl={{preserveDrawingBuffer: true}}
@@ -308,12 +323,8 @@ const BackgroundScene = () => {
        <Suspense fallback={<CanvasLoader />}>  
             <Gym    position={[2.5, -2, 0]} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
-            <Section position={[0, 2, -2]} rotation-y={Math.PI} text={'Tu recherches ?'} hero={hero0}/>
-            <Section position={[5, 2, 0]} rotation-y={Math.PI / 2} text={'services'} hero={hero1} visible={section !== 0}/>
             <Section3 position={[0, 15,0]} visible={section !== 0} />         
             <Section4 position={[0, 0, 50]} visible={section !== 2}/>
-            
-            
             
         </Suspense>
         
