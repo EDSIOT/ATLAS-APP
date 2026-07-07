@@ -268,10 +268,10 @@ const BackgroundScene = () => {
 
 
   const hero1=`
-  \n\n  ·**Programmes personnalisés** : du renforcement et remise en forme complète à la préparation pour tes échéances sportives.
-  \n  ·**Suivi mensuel évolutif** : programmes ajustés chaque semaine, retours techniques quotidiens et conseils nutrition pour booster tes performances.
-  \n  ·**Coaching individuel en présentiel** : correction de mouvements et conseils personnalisés, en direct avec ton coach.
-  \n  ·**Cours en visio** : comprends ta morpho-anatomie et ta physiologie pour un entraînement 100% adapté à ton corps.
+  \n\n  Programmes personnalisés : \n du renforcement et remise en forme complète à la préparation pour tes échéances sportives.
+  \n  Suivi mensuel évolutif : \n programmes ajustés chaque semaine, retours techniques quotidiens et conseils nutrition pour booster tes performances.
+  \n  Coaching individuel en présentiel : \n correction de mouvements et conseils personnalisés, en direct avec ton coach.
+  \n  Cours en visio : \n comprends ta morpho-anatomie et ta physiologie pour un entraînement 100% adapté à ton corps.
   `
 
   
@@ -333,7 +333,7 @@ const BackgroundScene = () => {
       
        <Suspense fallback={<CanvasLoader />}> 
             <Environment preset="night" /> 
-            <Gym/>
+            <Gym visible={section === 0 || section === 1} />
             <fog attach="fog" args={['#000000', 30, 50]}/>
             <Section2 position={[0, 0,0]} visible={section == 1} />  
             <Section3 position={[0, 15, 0]} visible={section == 2} />         

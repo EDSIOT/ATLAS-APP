@@ -479,7 +479,11 @@ body {
   font-size: 6rem;
 }
 
+.section-overlay h2 {
+  font-size: 20px;
+}
+
 .section-overlay-2 {
   font-family: 'Anton', sans-serif;
-  color: #ffffff; /* Couleur spécifique pour la section 2 */
+  color: #000000; /* Couleur spécifique pour la section 2 */
 }

@@ -123,7 +123,7 @@ const Section4 = ({...props}) => {
 
         thickness: { value: 0.2, min: 0, max: 3, step: 0.05 },
 
-        roughness: { value: 0.5, min: 0, max: 1, step: 0.1 },
+        roughness: { value: 0.1, min: 0, max: 1, step: 0.1 },
 
         transmission: {value: 1, min: 0, max: 1, step: 0.1},
 
