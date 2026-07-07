@@ -92,7 +92,7 @@ floatIntensity={6} // Up/down float intensity
 >
   <Svg 
     onClick={() => handleClick('https://www.instagram.com/halvor.j')}
-    fillMaterial={{wireframe: false}}
+    fillMaterial={{ wireframe: false, color: 'white' }}
     position={[5.5,2,-6]}
     
     scale={0.05}
