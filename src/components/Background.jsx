@@ -166,7 +166,7 @@ const Wallpaper = () => {
 const CameraAnimation = ({ section }) => {
   const targetPosition = useRef({ x: 10, y: 0 , z: 0 });
   const targets = [ 
-    {x: 0,y:1,z:-7},
+    {x: -4,y:3,z:-2},
     {x: 10,y:1,z:0},
     {x: 0,y:30,z:0},
     {x: 0,y:0,z:60},
@@ -334,8 +334,9 @@ const BackgroundScene = () => {
        <Suspense fallback={<CanvasLoader />}> 
             <Environment preset="night" /> 
             <Gym/>
-            <fog attach="fog" args={['#000000', 30, 50]}/>  
-            <Section3 position={[0, 15,0]} visible={section == 2} />         
+            <fog attach="fog" args={['#000000', 30, 50]}/>
+            <Section2 position={[0, 0,0]} visible={section == 1} />  
+            <Section3 position={[0, 15, 0]} visible={section == 2} />         
             <Section4 position={[0, 0, 50]} visible={section == 3}/>
             
         </Suspense>
